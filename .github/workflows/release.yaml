@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: make BUILD_STATIC=yes BUILD_SHARED=no CFLAGS="-static -O3" LDFLAGS="--static -O3"
+      - name: Build
+        runs: make BUILD_STATIC=yes BUILD_SHARED=no CFLAGS="-static -O3" LDFLAGS="--static -O3"
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
